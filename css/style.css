@@ -1,3 +1,51 @@
+* {
+	box-sizing: border-box;
+}
+
+
 body{
     background-color: aqua;
+}
+
+header{
+    justify-content: space-between;
+}
+.main-nav a {
+	/* Style for "Journal" */
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 50px;
+	height: 50px;
+
+	/* border-left: 1px solid black; */
+}
+.logo{
+    width: 10px;
+    height: 10px;
+}
+
+
+/* HELPERS */
+
+/* flex helpers */
+
+.flex {
+	display: flex;
+}
+
+.space-between {
+	justify-content: space-between;
+}
+
+.align-center {
+	align-items: center;
+}
+
+/* list helpers */
+
+.clean-list {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
 }
