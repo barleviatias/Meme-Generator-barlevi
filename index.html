@@ -9,7 +9,7 @@
     <title>Meme Genrator</title>
 </head>
 
-<body>
+<body onload="init()" >
     <header class="nav-bar flex align-center">
         <div class="logo"><img  src="/img/LOGO.png" alt="" width="100px"></div>
         <div class="menu">
@@ -19,13 +19,13 @@
             </ul>
         </div>
     </header>
-    <div class="meme-editor">
+    <div class="meme-editor flex align-center center ">
 
         <div class="meme-canvas">
             <canvas id="my-canvas" width="500" height="500" ></canvas>
         </div>
         <div class="control-panel">
-
+            <button onclick="renderMeme()">text</button>
         </div>
     </div>
 

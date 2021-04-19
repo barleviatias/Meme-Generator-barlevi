@@ -3,13 +3,18 @@
 }
 
 
-body{
-    background-color: aqua;
+body {
+	margin: 0;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
 }
 
 header{
     justify-content: space-between;
+    background-color: burlywood;
 }
+
 .main-nav a {
 	/* Style for "Journal" */
 	display: flex;
@@ -17,13 +22,21 @@ header{
 	align-items: center;
 	width: 50px;
 	height: 50px;
-
-	/* border-left: 1px solid black; */
 }
+
 .logo{
     width: 10px;
     height: 10px;
 }
+#my-canvas {
+    margin: 0 auto;
+    border: 2px solid black;
+    display: block;
+}
+
+
+
+
 
 
 /* HELPERS */
@@ -41,7 +54,9 @@ header{
 .align-center {
 	align-items: center;
 }
-
+.center{
+    justify-content: center;
+}
 /* list helpers */
 
 .clean-list {
