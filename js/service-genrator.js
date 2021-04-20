@@ -56,6 +56,30 @@ function changeLine() {
 	gMeme.selectedLineIdx++;
 	if (gMeme.selectedLineIdx===gMeme.lines.length)gMeme.selectedLineIdx=0;
 }
+function onChangeFont(val) {
+    changeFont(val)
+    drawImg();
+}
+
+function onOpenStrokeColor() {
+    document.querySelector('input[name=stroke-color]').click();
+}
+
+function onChangeStrokeColor(val) {
+    changeStrokeColor(val);
+    drawImg();
+}
+
+function onOpenFontColor() {
+    document.querySelector('input[name=font-color]').click();
+}
+
+function onChangeFontColor(val) {
+    changeFontColor(val);
+    drawImg();
+}
+
+
 
 function createLine() {
     const line = {
