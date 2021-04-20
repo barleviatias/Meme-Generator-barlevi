@@ -6,16 +6,39 @@ var gMeme = {
 	selectedImgId: 5,
 	selectedLineIdx: 0,
 	lines: [
-		{
-			txt: 'I never eat Falafel',
-			size: 20,
-			align: 'left',
-			color: 'red',
-		},
-	],
+        {
+            txt: 'Top Text',
+            size: 40,
+            align: 'center',
+            color: 'white',
+            stroke: 'black',
+            font: 'Impact',
+            pos:
+            {
+                x: 400,
+                y: 100
+            }
+        },
+
+        {
+            txt: 'Bottom Text',
+            size: 100,
+            align: 'center',
+            color: 'white',
+            stroke: 'black',
+            font: 'Impact',
+            pos:
+            {
+                x: 400,
+                y: 750
+            }
+        }
+    ]
 };
 
-
+function changeMemeImg(id) {
+    gMeme.imgId = id;
+}
 function changeLineTxt(txt) {
 	gMeme.lines[0].txt=txt;
 }

@@ -11,6 +11,13 @@ function init() {
     gImg = new Image()
     drawImg()
 }
+function onImgSelect(id) {
+    changeMemeImg(id);
+    // resizeCanvas();
+    renderMeme()
+    toggleGenerator()
+}
+
 function renderGallery() {
     const gallery = getGGallery();
     var htmlStr = gallery.map(img => {
@@ -38,19 +45,26 @@ function clearCanvas() {
 }
 function txtEdit(txt) {
     var meme=getMemes();
-    console.log(memes);
-    drawText(txt, 255, 100,meme)
+    console.log(meme);
+    drawText()
 }
 
-function drawText(text, x, y,meme) {
-    console.log(meme.lines[0].size);
-    gCtx.lineWidth = 2
-    gCtx.strokeStyle = 'red'
-    gCtx.fillStyle = 'white'
-    gCtx.font = meme.lines[0].size
-    gCtx.textAlign = 'center'
-    gCtx.fillText(text, x, y)
-    gCtx.strokeText(text, x, y)
+function drawText() {
+    const meme = getMemes();
+    meme.lines.forEach(line => {
+        gCtx.textAlign = `${line.align}`;
+        gCtx.font = `${line.size}px ${line.font}`;
+        gCtx.fillStyle = `${line.color}`;
+        gCtx.fillText(`${line.txt}`, line.pos.x, line.pos.y);
+        gCtx.lineWidth = 3;
+        gCtx.strokeStyle = line.stroke;
+        gCtx.strokeText(`${line.txt}`, line.pos.x, line.pos.y);
+    })
+    // document.querySelector('.text-editor input').value = meme.lines[meme.selectedLineIdx].txt;
 }
 
 
+function toggleGenerator() {
+    document.querySelector('.meme-editor').classList.toggle('no-display')
+    document.querySelector('.gallery').classList.toggle('no-display')
+}
