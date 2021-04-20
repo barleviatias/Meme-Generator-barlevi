@@ -9,9 +9,9 @@
     <title>Meme Genrator</title>
 </head>
 
-<body onload="init()" >
+<body onload="init()">
     <header class="nav-bar flex align-center">
-        <div class="logo"><img  src="/img/LOGO.png" alt="" width="100px"></div>
+        <div class="logo"><img src="/img/LOGO.png" alt="" width="100px"></div>
         <div class="menu">
             <ul class="main-nav flex clean-list">
                 <li><a href="">gallery</a></li>
@@ -19,13 +19,17 @@
             </ul>
         </div>
     </header>
-    <div class="meme-editor flex align-center center ">
-
+    <div class="gallery">
+    </div>
+    <div class="meme-editor flex align-center center no-display " >
         <div class="meme-canvas">
-            <canvas id="my-canvas" width="500" height="500" ></canvas>
+            <canvas id="my-canvas" width="500" height="500"></canvas>
         </div>
         <div class="control-panel">
-            <button onclick="renderMeme()">text</button>
+            <input onchange="changeLineTxt(this.value)" type="text" id="txt">
+            <button>-</button>
+            <button>+</button>
+            <button onclick="renderMeme()">update</button>
         </div>
     </div>
 
@@ -34,6 +38,7 @@
 
 
     <script src="/js/service-genrator.js"></script>
+    <script src="/js/gallery.service.js"></script>
     <script src="/js/controller.js"></script>
 </body>
 

@@ -16,3 +16,20 @@ var gMeme = {
 };
 
 
+function changeLineTxt(txt) {
+	gMeme.lines[0].txt=txt;
+}
+
+function getMemes() {
+	return gMeme
+}
+
+function incFont() {
+	gMeme.lines[0].size+=2;
+}
+
+function dicresFont() {
+	gMeme.lines[0].size-=2;
+}
+
+

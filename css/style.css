@@ -28,6 +28,21 @@ header{
     width: 10px;
     height: 10px;
 }
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 200px);
+    grid-template-rows: repeat(auto-fill, 200px);
+    gap: 5px;
+    padding: 5px;
+}
+.gallery-img {
+    width: 200px;
+    height: 200px;
+}
+
+.gallery-img img {
+    width: 100%;
+}
 #my-canvas {
     margin: 0 auto;
     border: 2px solid black;
@@ -63,4 +78,7 @@ header{
 	list-style-type: none;
 	margin: 0;
 	padding: 0;
+}
+.no-display {
+    display: none;
 }
