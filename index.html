@@ -23,13 +23,15 @@
     </div>
     <div class="meme-editor flex align-center center no-display " >
         <div class="meme-canvas">
-            <canvas id="my-canvas" width="500" height="500"></canvas>
+            <canvas id="my-canvas" width="600" height="600"></canvas>
         </div>
         <div class="control-panel">
-            <input onchange="changeLineTxt(this.value)" type="text" id="txt">
-            <button>-</button>
-            <button>+</button>
-            <button onclick="renderMeme()">update</button>
+            <input oninput="onChangeLineTxt(this.value)" type="text" id="txt">
+            <button onclick="onChangeFontSize(-2)" >-</button>
+            <button onclick="onChangeFontSize(2)">+</button>
+            <button onclick="onMoveLine(-6)">^</button>
+            <button onclick="onMoveLine(6)">#</button>
+            <button onclick="onChangeLine()">switch lines</button>
         </div>
     </div>
 
