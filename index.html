@@ -31,6 +31,7 @@
             </div>
         </div>
         <div class="meme-editor flex align-center center no-display ">
+            <button class="btn-close" onclick="toggleGenerator()">X</button>
             <div class="meme-canvas">
                 <canvas id="my-canvas" width="600" height="600"></canvas>
             </div>
@@ -54,8 +55,8 @@
                             </div>
                             
                             <div class="flex-grid">
-                                <div class="col"> <label>change color </label><input type="color" name="font-color" oninput="onChangeFontColor(this.value)" style="display: inline;"></div>
-                                <div class="col"><label>change Stroke </label><input type="color" name="stroke-color" oninput="onChangeStrokeColor(this.value)"
+                                <div class="col"> <label class="bold">change color </label><input type="color" name="font-color" oninput="onChangeFontColor(this.value)" style="display: inline;"></div>
+                                <div class="col"><label class="bold">change Stroke </label><input type="color" name="stroke-color" oninput="onChangeStrokeColor(this.value)"
                                     style="display: inline;"></div>
                                     <!-- <div class="col"></div> -->
                                 </div>
