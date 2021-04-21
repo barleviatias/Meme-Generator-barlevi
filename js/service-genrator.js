@@ -56,31 +56,20 @@ function changeLine() {
 	gMeme.selectedLineIdx++;
 	if (gMeme.selectedLineIdx===gMeme.lines.length)gMeme.selectedLineIdx=0;
 }
-function onChangeFont(val) {
-    changeFont(val)
-    drawImg();
+function changeFontColor(color) {
+	gMeme.lines[gMeme.selectedLineIdx].color=color
+}
+function changeStrokeColor(color) {
+	gMeme.lines[gMeme.selectedLineIdx].stroke=color
 }
 
-function onOpenStrokeColor() {
-    document.querySelector('input[name=stroke-color]').click();
+function deleteLine() {
+    gMeme.lines.splice(gMeme.selectedLineIdx, 1);
+    gMeme.selectedLineIdx--;
 }
-
-function onChangeStrokeColor(val) {
-    changeStrokeColor(val);
-    drawImg();
+function addLine() {
+    gMeme.lines.push(createLine());
 }
-
-function onOpenFontColor() {
-    document.querySelector('input[name=font-color]').click();
-}
-
-function onChangeFontColor(val) {
-    changeFontColor(val);
-    drawImg();
-}
-
-
-
 function createLine() {
     const line = {
         txt: 'New Text',
@@ -91,9 +80,10 @@ function createLine() {
         font: 'Impact',
         pos:
         {
-            x: 400,
-            y: 400
-        }
+            x: 275,
+            y: 275
+        },
+        isDragged: false,
     }
     return line;
 }

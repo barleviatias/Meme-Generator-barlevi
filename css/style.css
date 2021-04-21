@@ -2,7 +2,6 @@
 	box-sizing: border-box;
 }
 
-
 body {
 	margin: 0;
 	min-height: 100vh;
@@ -10,49 +9,73 @@ body {
 	flex-direction: column;
 }
 
-header{
-    justify-content: space-between;
-    background-color: burlywood;
+header {
+	justify-content: space-between;
+	background-color: burlywood;
+}
+.btn{
+    width: 50px;
+    height: 50px;
+}
+button:hover{
+    background-color:#66356d ;
+}
+.main-header {
+    
+	background-color: #540e5e;
+	color: #ffffff;
+}
+.container {
+	width: 1235px;
 }
 
+.nav-bar {
+	
+    justify-content: space-between;
+}
 .main-nav a {
 	/* Style for "Journal" */
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	width: 50px;
-	height: 50px;
+    color: #ffffff;
+	height: 100px;
 }
 
-.logo{
-    width: 10px;
-    height: 10px;
-}
 .gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, 200px);
-    grid-template-rows: repeat(auto-fill, 200px);
+	display: grid;
+	grid-template-columns: repeat(auto-fill, 200px);
+	grid-template-rows: repeat(auto-fill, 200px); 
+	
     gap: 5px;
     padding: 5px;
+	align-items: center;
+	justify-items: center;
 }
 .gallery-img {
-    width: 200px;
-    height: 200px;
+	width: 200px;
+	height: 200px;
 }
 
 .gallery-img img {
-    width: 100%;
+	width: 100%;
+}
+.meme-editor{
+    margin-top: 50px;
+}
+.control-panel input{
+    display: block;
+    font-size: 25px;
+}
+.control-panel{
+    margin-left: 50px;
 }
 #my-canvas {
-    margin: 0 auto;
-    border: 2px solid black;
-    display: block;
+	margin: 0 auto;
+	border: 2px solid black;
+	display: block;
 }
-
-
-
-
-
 
 /* HELPERS */
 
@@ -69,8 +92,8 @@ header{
 .align-center {
 	align-items: center;
 }
-.center{
-    justify-content: center;
+.center {
+	justify-content: center;
 }
 /* list helpers */
 
@@ -80,5 +103,14 @@ header{
 	padding: 0;
 }
 .no-display {
-    display: none;
+	display: none;
+}
+
+
+
+
+@media(min-width:600px){
+    .meme-editor{
+        flex-direction: column;
+    }
 }

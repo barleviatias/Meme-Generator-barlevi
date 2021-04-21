@@ -63,7 +63,7 @@ function drawText() {
         gCtx.strokeStyle = line.stroke;
         gCtx.strokeText(`${line.txt}`, x, line.pos.y);
     })
-    // document.querySelector('.text-editor input').value = meme.lines[meme.selectedLineIdx].txt;
+    document.querySelector('.control-panel input').value = meme.lines[meme.selectedLineIdx].txt;
 }
 
 
@@ -80,6 +80,32 @@ function onMoveLine(val) {
     moveLine(val);
     renderMeme();
 }
+function onChangeFont(val) {
+    changeFont(val)
+    drawImg();
+}
+
+function onOpenStrokeColor() {
+    document.querySelector('input[name=stroke-color]').click();
+}
+
+function onChangeStrokeColor(val) {
+    changeStrokeColor(val);
+    drawImg();
+}
+
+function onOpenFontColor() {
+    document.querySelector('input[name=font-color]').click();
+}
+
+function onChangeFontColor(val) {
+    changeFontColor(val);
+    renderMeme();
+}
+function onChangeStrokeColor(val) {
+    changeStrokeColor(val);
+    renderMeme();
+}
 function onChangeLine() {
     const meme = getMemes();
     changeLine()
@@ -87,6 +113,18 @@ function onChangeLine() {
     document.querySelector('.control-panel input').value = meme.lines[meme.selectedLineIdx].txt;
     document.querySelector('.control-panel input').focus();
 
+}
+function onDeleteLine() {
+    deleteLine()
+    renderMeme();
+}
+function onAddLine() {
+   addLine()
+    renderMeme();
+}
+function onDownloadImg(elLink) {
+    var imgContent = gCanvas.toDataURL('image/jpeg')
+    elLink.href = imgContent
 }
 function clearCanvas() {
     gCtx.clearRect(0, 0, gCanvas.width, gCanvas.height)
