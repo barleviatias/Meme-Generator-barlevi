@@ -58,7 +58,13 @@
                                 <div class="col"> <label class="bold">change color </label><input type="color" name="font-color" oninput="onChangeFontColor(this.value)" style="display: inline;"></div>
                                 <div class="col"><label class="bold">change Stroke </label><input type="color" name="stroke-color" oninput="onChangeStrokeColor(this.value)"
                                     style="display: inline;"></div>
-                                    <!-- <div class="col"></div> -->
+                                    <div class="col">
+                                        <label class="bold">change Font </label>
+                                        <select onchange="onChangeFont(this.value)" name="font" id="font">
+                                            <option value="assistant">assistant</option>
+                                            <option value="impact">impact</option>
+                                        </select>
+                                    </div>
                                 </div>
                                 
                                 

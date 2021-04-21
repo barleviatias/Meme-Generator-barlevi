@@ -62,7 +62,10 @@ function changeFontColor(color) {
 function changeStrokeColor(color) {
 	gMeme.lines[gMeme.selectedLineIdx].stroke=color
 }
+function changeFont(font) {
+	gMeme.lines[gMeme.selectedLineIdx].font=font
 
+}
 function deleteLine() {
     gMeme.lines.splice(gMeme.selectedLineIdx, 1);
     gMeme.selectedLineIdx--;

@@ -27,19 +27,13 @@ function renderGallery() {
 }
 function renderMeme() {
     var memes=getMemes();
-    console.log(memes);
     drawImg()
-    txtEdit(memes)
-    // clearCanvas()
-    
+    txtEdit(memes)   
 }
 function drawImg() {
-    // var memes=getMemes();
     const meme = getMemes();
     gImg.src = `img/${meme.selectedImgId}.jpg`;
-    gCtx.drawImage(gImg, 0, 0, gCanvas.width, gCanvas.height)
-        // drawText(memes.lines[0].txt, 255, 100)
-    
+    gCtx.drawImage(gImg, 0, 0, gCanvas.width, gCanvas.height)    
 }
 function txtEdit(txt) {
     var meme=getMemes();
@@ -48,7 +42,6 @@ function txtEdit(txt) {
 }
 function onChangeFontSize(val) {
     changeFontSize(val);
-    console.log('font change');
     renderMeme();
 }
 function drawText() {
@@ -119,6 +112,10 @@ function onChangeLine() {
 }
 function onDeleteLine() {
     deleteLine()
+    renderMeme();
+}
+function onChangeFont(font) {
+    changeFont(font)
     renderMeme();
 }
 function onAddLine() {
