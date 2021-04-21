@@ -71,6 +71,11 @@ button:hover{
 .control-panel{
     margin-left: 50px;
 }
+.meme-canvas{
+    width: 50vh;
+    margin-left: 40px;
+margin-right: 40px;
+}
 #my-canvas {
 	margin: 0 auto;
 	border: 2px solid black;
@@ -109,8 +114,22 @@ button:hover{
 
 
 
-@media(min-width:600px){
+@media(max-width:600px){
     .meme-editor{
         flex-direction: column;
+    }
+    .gallery-img {
+        width: 150px;
+        height: 150px;
+    }
+    .gallery {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, 150px);
+        grid-template-rows: repeat(auto-fill, 150px); 
+        
+        gap: 5px;
+        padding: 5px;
+        align-items: center;
+        justify-items: center;
     }
 }

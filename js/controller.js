@@ -13,7 +13,7 @@ function init() {
 }
 function onImgSelect(id) {
     changeMemeImg(id);
-    // resizeCanvas();
+    resizeCanvas();
     renderMeme()
     toggleGenerator()
 }
@@ -71,7 +71,10 @@ function toggleGenerator() {
     document.querySelector('.meme-editor').classList.toggle('no-display')
     document.querySelector('.gallery').classList.toggle('no-display')
 }
-
+function resizeCanvas() {
+    document.querySelector('#my-canvas').style.width = '100%'
+    document.querySelector('#my-canvas').style.height = '100%'
+}
 function onChangeLineTxt(txt) {
     changeLineTxt(txt)
 	renderMeme();
