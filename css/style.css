@@ -74,7 +74,7 @@ button:hover{
 .meme-canvas{
     width: 50vh;
     margin-left: 40px;
-margin-right: 40px;
+    margin-right: 40px;
 }
 #my-canvas {
 	margin: 0 auto;
@@ -127,9 +127,13 @@ margin-right: 40px;
         grid-template-columns: repeat(auto-fill, 150px);
         grid-template-rows: repeat(auto-fill, 150px); 
         
-        gap: 5px;
-        padding: 5px;
-        align-items: center;
-        justify-items: center;
+    }
+    .no-display {
+        display: none;
+    }
+    .meme-canvas{
+        width: 90%;
+        margin-left: 40px;
+        margin-right: 40px;
     }
 }
