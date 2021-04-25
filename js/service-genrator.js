@@ -35,7 +35,30 @@ var gMeme = {
         }
     ]
 };
+let gSavedMemes = getSavedMemes();
 
+function saveMeme() {
+    const newMeme = JSON.parse(JSON.stringify(gMeme))
+    gSavedMemes.push(newMeme);
+    saveToStorage('saved-memes', gSavedMemes)
+}
+function saveMeme() {
+    const newMeme = JSON.parse(JSON.stringify(gMeme))
+    gSavedMemes.push(newMeme);
+    saveToStorage('saved-memes', gSavedMemes)
+}
+function removeMeme(idx) {
+    gSavedMemes.splice(idx, 1);
+    saveToStorage('saved-memes', gSavedMemes)
+}
+function selectedMemeUpdate(idx) {
+    gMeme = gSavedMemes[idx];
+}
+function getSavedMemes() {
+    let memes = getFromStorage('saved-memes');
+    if(!memes) return [];
+    else return memes;
+}
 function changeMemeImg(id) {
     gMeme.selectedImgId = id;
 }

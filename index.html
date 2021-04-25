@@ -18,13 +18,17 @@
             <div class="menu">
                 <ul class="main-nav flex clean-list">
                     <li><a href="">gallery</a></li>
-                    <li><a href="">meme</a></li>
+                    <li><a onclick="onShowMemesGallery()" href="">meme</a></li>
                 </ul>
             </div>
         </div>
     </header>
     <main style="margin-bottom: 150px;">
-
+        <button onclick="onShowMemesGallery()">meme galery</button>
+        <div class="memes-gallery-container no-display">
+            <div class="memes-gallery">
+            </div>
+        </div>
         <div class="gallery-container flex center">
 
             <div class="gallery container ">
@@ -75,11 +79,12 @@
 
                 <div class="flex-grid center">
 
-                   <button>
-                       <a href="#" onclick="onDownloadImg(this)" download="my-img.jpg" style="display: block;">Download as
-                        jpeg</a>
-                   </button>
-<button>save(in work)</button>
+                    <button>
+                        <a href="#" onclick="onDownloadImg(this)" download="my-img.jpg" style="display: block;">Download
+                            as
+                            jpeg</a>
+                    </button>
+                    <button onclick="onSaveMeme()">save(in work)</button>
                 </div>
             </div>
         </div>
@@ -90,6 +95,7 @@
     <footer class="flex center align-center">
         <label for="">Meme Generator By Bar Levi Atias</label>
     </footer>
+    <script src="./js/storage.service.js"></script>
     <script src="./js/service-genrator.js"></script>
     <script src="./js/gallery.service.js"></script>
     <script src="./js/controller.js"></script>

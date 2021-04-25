@@ -25,6 +25,33 @@ function renderGallery() {
     })
     document.querySelector('.gallery').innerHTML = htmlStr.join('');
 }
+
+function renderMemesGallery() {
+    const memes = getSavedMemes();
+    let htmlStr = memes.map((meme, index) => {
+        return `<div onclick="onMemeSelect(${index})" class="gallery-img relative"><img src="img/${meme.selectedImgId}.jpg"><button onclick="onRemoveMeme(event, ${index})" class="remove-meme-btn">X</button></div>`
+    })
+    document.querySelector('.memes-gallery').innerHTML = htmlStr.join('');
+    
+}
+function onSaveMeme() {
+    console.log('meme saved');
+    saveMeme();
+    renderMemesGallery();
+}
+
+function onMemeSelect(idx) {
+    selectedMemeUpdate(idx)
+    resizeCanvas();
+    renderMeme();
+    onShowGenerator();
+}
+
+function onRemoveMeme(ev, idx) {
+    ev.stopPropagation();
+    removeMeme(idx);
+    renderMemesGallery();
+}
 function renderMeme() {
     var memes=getMemes();
     drawImg()
@@ -64,7 +91,17 @@ function drawText() {
     document.querySelector('.control-panel input').value = meme.lines[meme.selectedLineIdx].txt;
 }
 
-
+function onShowMemesGallery() {
+    document.querySelector('.memes-gallery-container').classList.remove('no-display')
+    document.querySelector('.gallery').classList.add('no-display')
+    document.querySelector('.meme-editor').classList.add('no-display')
+    renderMemesGallery();
+}
+function onShowGenerator() {
+    document.querySelector('.meme-editor').classList.remove('no-display')
+    document.querySelector('.gallery').classList.add('no-display')
+    document.querySelector('.memes-gallery-container').classList.add('no-display')
+}
 function toggleGenerator() {
     document.querySelector('.meme-editor').classList.toggle('no-display')
     document.querySelector('.gallery').classList.toggle('no-display')
