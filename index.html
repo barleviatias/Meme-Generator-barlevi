@@ -26,7 +26,7 @@
     <main style="margin-bottom: 150px;">
 
         <div class="gallery-container flex center">
-            
+
             <div class="gallery container ">
             </div>
         </div>
@@ -35,56 +35,64 @@
             <div class="meme-canvas">
                 <canvas id="my-canvas" width="600" height="600"></canvas>
             </div>
-            <div class="control-panel">
+            <div class="control-panel flex center align-center">
                 <input oninput="onChangeLineTxt(this.value)" type="text" id="txt">
                 <div class="flex-grid">
                     <div class="col"> <button class="btn" onclick="onChangeFontSize(-2)"><img class="icon"
-                        src="./ICONS/decrease font - icon.png" alt=""></button></div>
-                        <div class="col"> <button class="btn" onclick="onChangeFontSize(2)"><img class="icon" src="./ICONS/increase font - icon.png"
-                            alt=""></button></div>
-                            <div class="col"><button class="btn" onclick="onMoveLine(-6)"><img class="icon" src="./ICONS/uparrow.png" alt=""></button></div>
-                            <div class="col">  <button class="btn" onclick="onMoveLine(6)"><img class="icon" src="./ICONS/downarrow.png" alt=""></button></div>
-                        </div>
-                        
-                        
-                        <div class="flex-grid">
-                            <div class="col"> <button class="btn" onclick="onChangeLine()"><img class="icon"
+                                src="./ICONS/decrease font - icon.png" alt=""></button></div>
+                    <div class="col"> <button class="btn" onclick="onChangeFontSize(2)"><img class="icon"
+                                src="./ICONS/increase font - icon.png" alt=""></button></div>
+                    <div class="col"><button class="btn" onclick="onMoveLine(-6)"><img class="icon"
+                                src="./ICONS/uparrow.png" alt=""></button></div>
+                    <div class="col"> <button class="btn" onclick="onMoveLine(6)"><img class="icon"
+                                src="./ICONS/downarrow.png" alt=""></button></div>
+                </div>
+
+
+                <div class="flex-grid">
+                    <div class="col"> <button class="btn" onclick="onChangeLine()"><img class="icon"
                                 src="./ICONS/up-and-down-opposite-double-arrows-side-by-side.png" alt=""></button></div>
-                                <div class="col"><button class="btn" onclick="onDeleteLine()"><img class="icon" src="./ICONS/trash.png" alt=""></button></div>
-                                <div class="col"><button class="btn" onclick="onAddLine()"><img class="icon" src="./ICONS/add.png" alt=""></button></div>
-                            </div>
-                            
-                            <div class="flex-grid">
-                                <div class="col"> <label class="bold">change color </label><input type="color" name="font-color" oninput="onChangeFontColor(this.value)" style="display: inline;"></div>
-                                <div class="col"><label class="bold">change Stroke </label><input type="color" name="stroke-color" oninput="onChangeStrokeColor(this.value)"
-                                    style="display: inline;"></div>
-                                    <div class="col">
-                                        <label class="bold">change Font </label>
-                                        <select onchange="onChangeFont(this.value)" name="font" id="font">
-                                            <option value="assistant">assistant</option>
-                                            <option value="impact">impact</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                
-                                
-                                <div class="flex-grid center">
-                                    
-                                    <a href="#" onclick="onDownloadImg(this)" download="my-img.jpg" style="display: block;">Download as jpeg</a>
-                                    
-                                </div>
-                            </div>
-                        </div>
-                        
-                    </main>
-                        
-                        
-                        <footer class="flex center align-center" >
-                           <label for="">Meme Generator By Bar Levi Atias</label> 
-                        </footer>
-                        <script src="./js/service-genrator.js"></script>
-                        <script src="./js/gallery.service.js"></script>
-                        <script src="./js/controller.js"></script>
-                    </body>
-                    
-                    </html>
+                    <div class="col"><button class="btn" onclick="onDeleteLine()"><img class="icon"
+                                src="./ICONS/trash.png" alt=""></button></div>
+                    <div class="col"><button class="btn" onclick="onAddLine()"><img class="icon" src="./ICONS/add.png"
+                                alt=""></button></div>
+                </div>
+
+                <div class="flex-grid">
+                    <div class="col"> <label class="bold">change color </label><input type="color" name="font-color"
+                            oninput="onChangeFontColor(this.value)" style="display: inline;"></div>
+                    <div class="col"><label class="bold">change Stroke </label><input type="color" name="stroke-color"
+                            oninput="onChangeStrokeColor(this.value)" style="display: inline;"></div>
+                    <div class="col">
+                        <label class="bold">change Font </label>
+                        <select onchange="onChangeFont(this.value)" name="font" id="font">
+                            <option value="assistant">assistant</option>
+                            <option value="impact">impact</option>
+                        </select>
+                    </div>
+                </div>
+
+
+                <div class="flex-grid center">
+
+                   <button>
+                       <a href="#" onclick="onDownloadImg(this)" download="my-img.jpg" style="display: block;">Download as
+                        jpeg</a>
+                   </button>
+
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+
+    <footer class="flex center align-center">
+        <label for="">Meme Generator By Bar Levi Atias</label>
+    </footer>
+    <script src="./js/service-genrator.js"></script>
+    <script src="./js/gallery.service.js"></script>
+    <script src="./js/controller.js"></script>
+</body>
+
+</html>

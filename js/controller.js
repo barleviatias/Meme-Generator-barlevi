@@ -33,6 +33,11 @@ function renderMeme() {
 function drawImg() {
     const meme = getMemes();
     gImg.src = `img/${meme.selectedImgId}.jpg`;
+    var imgH=gImg.height
+    var imgW=gImg.width
+    console.log(imgH,imgW);
+    // gCtx.drawImage(gImg, 0, 0,gImg.width,    gImg.height,     // source rectangle
+    //     0, 0, gCanvas.width, gCanvas.height); // destination rectangle
     gCtx.drawImage(gImg, 0, 0, gCanvas.width, gCanvas.height)    
 }
 function txtEdit(txt) {
@@ -65,8 +70,9 @@ function toggleGenerator() {
     document.querySelector('.gallery').classList.toggle('no-display')
 }
 function resizeCanvas() {
+    
     document.querySelector('#my-canvas').style.width = '100%'
-    document.querySelector('#my-canvas').style.height = '100%'
+    // document.querySelector('#my-canvas').style.height = '100%'
 }
 function onChangeLineTxt(txt) {
     changeLineTxt(txt)
